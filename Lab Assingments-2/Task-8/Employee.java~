@@ -1,0 +1,36 @@
+public class Employee{
+  public String newEmployee;
+  public double Salary = 30000.0;
+  public String designation = "junior";
+   public void displayInfo(){
+    System.out.println("Employee Name: "+newEmployee);
+    System.out.println("Employee Salary: "+Salary);
+    System.out.println("Employee Designation: "+designation);
+   }
+   public void calculateTax(){
+     int tax = 0;
+     if(salary>50000.0){
+      tax = (salary*(30/100));
+     
+      System.out.println(newEmployee+"Tax Amount: "+tax+" tk");
+     }
+     else if(salary>30000.0){
+      tax = (salary*(10/100));
+     
+      System.out.println(newEmployee+"Tax Amount: "+tax+" tk");
+     }
+     else{
+      System.out.println("No need to pay tax");
+     }
+   }
+   public void promoteEmployee(String a){
+     int sum=0;
+     for(int i=0;i<a.length();i++){
+       sum+= (int) a.charAt(i);
+     }
+   }
+}
+
+
+
+

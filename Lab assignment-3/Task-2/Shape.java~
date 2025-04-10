@@ -1,0 +1,16 @@
+public class Shape {
+  public int result;
+  public String shape;
+  public void setParameters(String a, int b){
+    shape=a;
+    result = 3.1416 * (b*b);
+  }
+  public void setParameters(String a, int b,int c){
+     shape=a;
+     result = 0.5 * b * c;
+  }
+  public void setParameters(String a, double b,double c){
+     shape=a;
+     result = b * c;
+  }
+}

@@ -1,0 +1,8 @@
+public class BankAccount{
+  public String type;
+  public int account;
+  public String printDetails(){
+    String a = "Account No: "+account+"\n"+"Type: "+type;
+    return a;
+  }
+}

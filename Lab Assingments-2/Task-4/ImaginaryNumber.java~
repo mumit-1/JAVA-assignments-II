@@ -1,0 +1,9 @@
+public class ImaginaryNumber {
+ public int realPart;
+ public int imaginaryPart;
+ public static void printNumber(int a,int b){
+   a = realPart;
+   b = imaginaryPart;
+   System.out.println(realPart+"i + "+imaginaryPart+"i");
+ }
+}

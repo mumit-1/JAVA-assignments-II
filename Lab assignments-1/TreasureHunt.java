@@ -1,0 +1,109 @@
+import java.util.Scanner;
+public class TreasureHunt{
+
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+     int [][] arr2D = {{0, 0, 10, 0, -1},
+                      {0, -1, 0, 0, -1},
+                      {-1, 0, -1, 0, 0},
+                      {0, -1, 7, 0, -1},
+                      {0, -1, 0, -1, 0}
+    };
+    System.out.println("Initial Map:");
+    printMap(arr2D);
+    int row = arr2D.length;
+    int col = arr2D[0].length;
+    int row_pos = 0, col_pos = 0;
+
+    
+    int turns = 5;
+//     int new_row = row_pos, new_col = col_pos;
+    while (turns > 0) {
+       for(int i=0;i<arr2D.length;i++){
+      for(int k=0;k<arr2D[i].length;k++){
+        if(arr2D[i][k]==7){
+          row_pos=i;
+          col_pos=k;
+        }
+      }
+    }
+       int new_row = row_pos, new_col = col_pos;
+      System.out.printf("Enter move %d: ",(6-turns));
+      String inp = sc.nextLine();
+      int sum =0;
+      for(int i=0;i<inp.length();i++){
+        sum+= (int) inp.charAt(i);
+      }
+      //UP
+      if(sum==165){
+        --new_row;
+        
+      }
+      //DOWN
+      else if(sum==312){
+        ++new_row;
+       
+      }
+      //LEFT
+      else if(sum==299){
+        --new_col;
+       
+      }
+      //RIGHT
+      else if(sum==382){
+        ++new_col;
+        
+      }
+      else{
+      System.out.println("Wrong output");
+      continue;
+      }
+      if(check(arr2D,new_row,new_col)){
+      
+         break;
+      }
+      else if(arr2D[new_row][new_col]==10){
+          System.out.println("Treasure found. You win!");
+          System.out.println("Final State");
+          arr2D[row_pos][col_pos]=0;
+         arr2D[new_row][new_col]=7;
+         printMap(arr2D);
+         
+        }
+      else{}
+      arr2D[row_pos][col_pos]=0;
+      arr2D[new_row][new_col]=7;
+      System.out.println("Current state:");
+      printMap(arr2D);
+      turns--;
+    }
+    if (turns == 0) {
+      System.out.println("Failed to find the treasure.");
+    }
+  }
+  public static boolean check(int[][] arr2D,int new_row,int new_col){
+      
+       if(new_row>(arr2D.length-1) || new_col>(arr2D.length-1) || new_row<0  || new_col<0 ){
+          System.out.println("Player fell outside the playing area. Game over!");
+          return true;
+        }    
+       else if(arr2D[new_row][new_col]==-1){
+          System.out.println("Player stepped on mine. Game Over!");
+          return true;
+        }
+      
+        else{
+          return false;
+      }
+  }
+  public static void printMap(int[][] arr2D) {
+    
+    for(int i=0;i<arr2D.length;i++){
+      for(int k=0;k<arr2D[i].length;k++){
+       
+        System.out.print(arr2D[i][k]+"     ");
+      }
+      System.out.println();
+    }
+  }
+}

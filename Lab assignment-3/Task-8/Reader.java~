@@ -1,0 +1,25 @@
+public class Reader {
+  public String reader;
+  public int capacity;
+  public String[] arr = new String[capacity];
+  public int total=0;
+  public String createReader(String a,int b){
+    reader = a;
+    capacity = b;
+    String x="A new reader is created!";
+    return x;
+  }
+  public void addBook(String a){
+    if(total<capacity){
+    arr[total] = a;
+    total++;
+    }
+  }
+  public void readerInfo(){
+    for(int i=0;i<total;i++){
+      if(arr[i]!=null){
+      System.out.println("Book 2: "+arr[i]);
+      }
+    }
+  }
+}

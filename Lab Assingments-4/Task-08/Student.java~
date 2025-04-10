@@ -1,0 +1,12 @@
+public class Student{
+    public String name;
+    public String deptName;
+    public int id;
+    public String email;
+    public int password;
+    public Student(String a,int b,String c){
+        name=a;
+        deptName=c;
+        id=b;
+    }
+}

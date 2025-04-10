@@ -1,0 +1,15 @@
+public class Cart {
+   public int cart_num;
+   public int quantity=0;
+   public String[] arr1=new String[3];
+   public int[] arr2 = new arr2[3];
+   public void create_cart(int a){
+    cart_num=a;
+   }
+   public void addItem(String a,int b){
+    arr1[quantity]=a;
+    arr2[quantity]=b;
+    quantity++;
+    System.out.println(a+" added to cart "+cart_num+"\n"+"You have "+quantity+" item(s) in your cart now.");
+   }
+}

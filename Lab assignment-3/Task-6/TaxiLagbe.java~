@@ -1,0 +1,16 @@
+public class TaxiLagbe{
+  public String taxi_num;
+  public String location;
+  public int total_passenger=0;
+  public String[] arr = new String[total_passenger];
+  public int fare;
+  public void storeInfo(String a,String b){
+    taxi_num=a;
+    location=b;
+  }
+  public void addPassenger(String a,int b){
+    arr[total_passenger]=a;
+    total_passenger++;
+    fare+=b;
+  }
+}

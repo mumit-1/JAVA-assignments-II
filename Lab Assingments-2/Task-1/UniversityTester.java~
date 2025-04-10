@@ -1,0 +1,7 @@
+public class UniversityTester{
+  public static void main(String [] args){
+  University o1 = new University;
+  University o2 = new University;
+  System.out.println(o1+"/n"+o2);
+  }
+}

@@ -1,0 +1,177 @@
+//Task-01
+public class University{
+    public String name;
+    public String country;
+}
+
+
+
+
+//Task-02
+public class Student{
+  public String name="Default";
+  public int id;
+}
+
+
+
+//Task-03
+public class CSECourse{
+  public String courseName = "Programming Language II";
+  public String courseCode = "CSE111";
+  public int credit = 3;
+}
+
+
+
+//Task-04
+public class ImaginaryNumber {
+ public int realPart;
+ public int imaginaryPart;
+ public void printNumber(){
+
+   System.out.println(realPart+"i + "+imaginaryPart+"i");
+ }
+}
+
+
+
+//Task-05
+public class Course{
+  public String courseName ;
+  public String courseCode ;
+  public int credit ;
+  public void updateDetails(String a,String b,int i){
+    courseName = a;
+    courseCode = b;
+    credit =i;
+  }
+  public void displayCourse(){
+    System.out.println("Course Name: "+courseName);
+    System.out.println("Course Code: "+courseCode);
+    System.out.println("Credit: "+credit);
+  }
+}
+
+
+
+//Task-06
+public class Assignment{
+ public int tasks;
+ public String difficulty;
+ public boolean submission;
+ public void printDetails(){
+   System.out.println("Number of tasks: "+tasks);
+   System.out.println("Difficulty level: "+difficulty);
+   System.out.println("Submission required: "+submission);
+ } 
+ public String makeOptional(){
+   String a="";
+   if(submission){
+   submission=false;
+   a="Assignment will not require submission";
+   }
+   else{
+   a="Submission is already not required";
+   }
+   return a;
+ }
+}
+
+
+
+//Task-07
+public class CellPhone{
+  public String model = "umknown";
+  public int count = 0;
+  public String[] contact_arr = new String[3];
+  
+  public void printDetails(){
+    System.out.println("Phone model "+model);
+    if(count==0){
+      System.out.println("Contacts Stored 0");
+    }
+    
+    if(count>0 && count<4){
+    System.out.println("Contacts Stored "+count);
+    System.out.println("Stored Contacts: ");
+    for(int i=0;i<count;i++){
+     System.out.println(contact_arr[i]+" "); 
+    }
+    System.out.println();
+    }
+    }
+  public void storeContact(String c){
+ 
+  if(count>2){
+     System.out.println("Memory full. New contact can't be stored.");
+  }
+  else {
+     System.out.println("Contact Stored");
+     contact_arr[count]=c;
+     count++;
+   
+  }
+  }
+}
+
+
+
+//Task-08
+public class Employee{
+  public String name;
+  public double Salary = 30000.0;
+  public String designation = "junior";
+  public void newEmployee(String a){
+    name=a;
+  }
+   public void displayInfo(){
+    System.out.println("Employee Name: "+name);
+    System.out.println("Employee Salary: "+Salary);
+    System.out.println("Employee Designation: "+designation);
+   }
+   public void calculateTax(){
+     double tax = 0.0;
+     if(Salary>50000.0){
+//      tax = ;
+     
+      System.out.println(name+" Tax Amount: "+Salary*(30.0/100.0)+" Tk");
+     }
+     else if(Salary>30000.0){
+//      tax = ;
+     
+      System.out.println(name+" Tax Amount: "+Salary*(10.0/100.0)+" Tk");
+     }
+     else{
+      System.out.println("No need to pay tax");
+     }
+   }
+   public void promoteEmployee(String a){
+     int sum=0;
+     for(int i=0;i<a.length();i++){
+       sum+= (int) a.charAt(i);
+     }
+     //lead
+     if(sum==406){
+       Salary+=50000.0;
+     }
+     //manager
+     else if(sum==731){
+       Salary+=75000.0;
+     }
+     //senior
+     else if(sum==656){
+       Salary+= 25000;   
+     }
+       System.out.println(name+" has been promoted to "+a);
+       System.out.println("New Salary: "+Salary+" Tk");
+   }
+}
+
+
+
+
+
+
+
+

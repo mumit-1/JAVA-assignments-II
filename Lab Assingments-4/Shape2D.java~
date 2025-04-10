@@ -1,0 +1,22 @@
+public class Shape2D{
+  public double areaResult;
+  public Shape2d(){
+    areaResult=5.0*5.0;
+  }
+  public Shape2D(int a,int b,int c,String c){
+    if(c.equalsTo("rectangle")){
+      areaResult=a*b;
+    }
+    else if(c.equalsTo("Triangle")){
+      arearesult=a*b*0.5;
+    }
+    else{
+     double s=((a+b+c)/2.0);
+     areaResult=s*(a-s)*(b-s)*(c-s);
+    }
+  }
+  public void area(){
+    System.out.println(areaResult);
+  }
+  
+}

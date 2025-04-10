@@ -1,0 +1,20 @@
+public class Library{
+public int capacity;
+public int books;
+public String[] arr[books];
+ public void setBookCapacity(){
+   ++capacity;
+ }
+ public void addBook(String a){
+   
+   if(capacity>books){
+    arr[books]=a;
+    System.out.println("Book '"+a+"' added to the library");
+    ++books;
+   }
+   else{
+    System.out.println("Exceeds maximum capacity. You can't add more than "+capacity+" books
+");
+   }
+ }
+}

@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Task2{
+  public static void main(String [] args){
+    Scanner obj = new Scanner(System.in);
+    
+      String n=obj.nextLine();
+      String n2=obj.nextLine();
+      int sum=0;
+      for(int i=0;i<n.length();i++){
+        sum+=(int)n.charAt(i);
+      }
+      for(int i=0;i<n2.length();i++){
+        sum+=(int)n2.charAt(i);
+      }
+      System.out.println(n+" "+n2);
+       System.out.println(sum);
+  }
+}
