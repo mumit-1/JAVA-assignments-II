@@ -82,7 +82,6 @@ public class Playlist{
    boolean t2=false;
    while(t.next!=null){
      if(a.equals(t.name)){
-//       System.out.println("Playing "+t.name+" by "+t.singer+".");
        t2=true;
        break;
      }
@@ -105,7 +104,6 @@ public class Playlist{
    int count =0;
    while(t.next!=null){
      if(count==a){
-//       System.out.println("Playing "+t.name+" by "+t.singer+".");
        t2=true;
        break;
      }
@@ -162,7 +160,6 @@ public class Playlist{
      
    }
    public int totalSong(){
-     
        return --Song.songCount;
    }
    
