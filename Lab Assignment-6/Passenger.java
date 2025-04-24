@@ -1,3 +1,4 @@
+//Task-02
 public class Passenger{
  public static int no_of_passenger;
  public static double total_fare;

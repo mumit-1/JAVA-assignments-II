@@ -1,3 +1,4 @@
+//Task-07
 public class Student{
     public static int total ;
     public static int cse ;

@@ -1,0 +1,292 @@
+//Task-01
+public class Product{
+  private String name="Unknown";
+  private double price=0.0;
+  private int quantity;
+  public Product(String a,double b){
+    name=a;
+    price=b;
+  }
+    public Product(){
+
+  }
+  public void displayInfo(boolean a){
+   if(a==true) System.out.println("Product Name: "+name+" \nPrice: $"+price+" \nQuantity: "+quantity);
+   else System.out.println("Product Name: "+name+" \nPrice: $"+price);
+  }
+  public void displayInfo(){
+   displayInfo(false);
+  }
+  public void setQuantity(int a){
+   quantity=a;
+  }
+  
+  public int getQuantity(){
+   return quantity;
+  }
+  
+  public double getPrice(){
+   return price;
+  }
+}
+
+
+
+
+
+//Task-02
+public class Passenger{
+ public static int no_of_passenger;
+ public static double total_fare;
+ private String name;
+ private double weight;
+ private double distance;
+ private double fare;
+   public void storeBaggageWeight(double a){
+      weight=a;
+     fare+=(weight*10);
+     total_fare+=(weight*10);
+       
+    }
+ public Passenger(String a,double b){
+        name=a;
+        distance=b;
+        fare+=((distance*20.0));
+        
+        no_of_passenger++;
+        total_fare+=fare;
+    }
+  
+    public void passengerDetails(){
+        System.out.println("Name: "+name+" \nFare: "+fare+" TK");
+    }
+}
+
+
+
+
+
+//Task-03
+public class Book{
+  public static int total_books_sold;
+  public static double total_revenue;
+  public String name;
+  public double price;
+  public Book(String a,double b) {
+    name=a;
+    price=150-(150*(b/100));
+    total_books_sold++;
+    total_revenue+=price;
+  }
+  public void bookDetails(){
+    System.out.println("Title: "+name+" \nPrice after Discount: "+price+" TK");
+  }
+}
+
+
+
+
+
+//Tsak-04
+public class Circle{
+    public static int count;
+    private int radius;
+    private double area;
+    public Circle(int a){
+        count++;
+        radius=a;
+    }
+    public int getRadius(){
+        return radius;
+    }
+    public double area(){
+        return 3.1416*(radius*radius);
+    }
+}
+
+
+
+
+//Task-05
+public class Borrower{
+  public static int book_count[] = {3, 3, 3};
+  public static String book_name[] = {"Pather Panchali", "Durgesh Nandini", "Anandmath"};
+  private int book_took;
+  private String[] book = new String[3];
+  private String name;
+  public static void bookStatus(){
+    System.out.println("Available Books:");
+    for(int i=0;i<3;i++){
+      System.out.println(book_name[i]+" : "+book_count[i]);
+    }
+  }
+  public Borrower(String a){
+    name=a;
+  }
+  public void borrowBook(String a){
+        int need1=-1;
+        for(int i=0;i<3;i++){
+      if(book_name[i].equals(a)) need1 = i; 
+    }
+    if(book_count[need1]!= 0){
+
+    book[book_took] = a;
+    book_took++;
+    int need = -1;
+    for(int i=0;i<3;i++){
+      if(book_name[i].equals(a)) need = i; 
+    }
+    book_count[need]--;
+    }
+    else{
+      System.out.println("This book is not available.");
+    }
+  }
+  public void borrowerDetails(){
+    System.out.println("Name : "+name+"\nBooks Borrowed:");
+    for(int i=0;i<3;i++){
+      if(book[i]!=null) System.out.println(book[i]+" ");
+    }
+  }
+  public static int remainingBooks(String a){
+    int need=-1;
+        for(int i=0;i<3;i++){
+      if(book_name[i].equals(a)) need = i; 
+    }
+  return book_count[need];
+  }
+
+}
+
+
+
+
+
+
+//Task-06
+public class Cargo{
+  public static double total = 10.00;
+  public static int count = 1;
+  public int id;
+    private String name;
+    private double weight;
+    private boolean status;
+  public static double capacity(){
+    return total;
+  }
+    public Cargo(String a,double b){
+        name=a;
+        weight=b;
+        id=count;
+        count++;
+    }
+    public void details(){
+        System.out.println("Cargo ID: "+id+", Contents: "+name+", Weight: "+weight+", Loaded: "+status);
+    }
+    public void load(){
+        if(total>=weight){
+
+        status=true;
+        total-=weight;
+        System.out.println("Cargo "+id+" loaded for transport.");
+        }
+        else{
+            System.out.println("Cannot load cargo, exceeds weight capacity.");
+        }
+    }
+    public void unload(){
+        status=false;
+        total+=weight;
+        System.out.println("Cargo "+id+" unloaded.");
+    }
+}
+
+
+
+
+
+
+
+
+//Task-07
+public class Student{
+    public static int total ;
+    public static int cse ;
+    public static int notCse ;
+    private String name;
+    private String dept;
+    private double cg;
+    private int id;
+
+    public static void printDetails(){
+        System.out.println("Total Student(s): "+total+"\nCSE Student(s): "+cse+"\nOther Department Student(s): "+notCse);
+    }
+    public Student(String a, double b,String c){
+        name=a;
+        cg=b;
+        dept=c;
+        id=(++total);
+        if(c.equals("CSE")) cse++;
+        else notCse++;
+    }
+    public Student(String a, double b){
+        this(a,b,"CSE");
+    }
+    public void individualDetail(){
+
+        System.out.println("ID: "+id+"\nName: "+name+"\nCGPA: "+cg+"\nDepartment: "+dept);
+    }
+}
+
+
+
+
+
+
+//Task-08
+public class Player{
+    public static int total;
+    public static int count;
+    public static String[] arr = new String[11];
+    public String name;
+    public String country;
+    public int jersey;
+
+    public static void info(){
+        System.out.println("Total number of players: "+total);
+        System.out.print("Players enlisted so far: ");
+        boolean check1=false;
+        for(int i=0;i<11;i++){
+            if(arr[i]!=null) {
+                System.out.print(arr[i]);
+                if(i<(count-1)) System.out.print(" , ");
+            }
+            
+        }
+        System.out.println();
+    }
+    public Player(String a,String b, int c){
+        name=a;
+        country=b;
+        jersey=c;
+        arr[count] = a;
+        count++;
+        total++;
+    }
+    public String player_detail(){
+        String a="Player Name: "+name+"\nJersey Number: "+jersey+"\nCountry: "+country;
+        return a;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+

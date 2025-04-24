@@ -1,7 +1,8 @@
+//Task-05
 public class Borrower{
   public static int book_count[] = {3, 3, 3};
   public static String book_name[] = {"Pather Panchali", "Durgesh Nandini", "Anandmath"};
-  private int book_took;
+  private int took;
   private String[] book = new String[3];
   private String name;
   public static void bookStatus(){
@@ -14,19 +15,19 @@ public class Borrower{
     name=a;
   }
   public void borrowBook(String a){
-        int need1=-1;
+        int ok=-1;
         for(int i=0;i<3;i++){
-      if(book_name[i].equals(a)) need1 = i; 
+      if(book_name[i].equals(a)) ok = i; 
     }
-    if(book_count[need1]!= 0){
+    if(book_count[ok]!= 0){
 
-    book[book_took] = a;
-    book_took++;
-    int need = -1;
+    book[took] = a;
+    took++;
+    int ballon = -1;
     for(int i=0;i<3;i++){
-      if(book_name[i].equals(a)) need = i; 
+      if(book_name[i].equals(a)) ballon = i; 
     }
-    book_count[need]--;
+    book_count[ballon]--;
     }
     else{
       System.out.println("This book is not available.");
@@ -39,11 +40,11 @@ public class Borrower{
     }
   }
   public static int remainingBooks(String a){
-    int need=-1;
+    int check1=-1;
         for(int i=0;i<3;i++){
-      if(book_name[i].equals(a)) need = i; 
+      if(book_name[i].equals(a)) check1 = i; 
     }
-  return book_count[need];
+  return book_count[check1];
   }
 
 }

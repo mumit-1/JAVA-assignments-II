@@ -1,3 +1,4 @@
+//Task-06
 public class Cargo{
   public static double total = 10.00;
   public static int count = 1;
