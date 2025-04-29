@@ -25,10 +25,10 @@ public class CustomerService{
         arr[0]=null;
     } 
     else System.out.println("No customers to serve");
- for (int i = 0; i < size - 1; i++) {
-    arr[i] = arr[i + 1];
-}
- arr[size - 1] = null;
+    for(int i=0;i<size-1;i++){
+      arr[i]=arr[i+1];
+    }
+    arr[size-1]=null;
 
  }
 
