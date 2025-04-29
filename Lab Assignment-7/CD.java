@@ -1,0 +1,17 @@
+public class CD extends Product{
+    public String band;
+    public int num1;
+    public String type;
+    public CD(int a,String b,int c,String d,int e,String f){
+        super(a,b,c);
+        band=d;
+        num1=e;
+        type=f;
+
+    }
+    public String printDetail(){
+        String a = super.getIdTitlePrice();
+        String b = a + " Band: "+band+" Duration: "+num1+" minutes Genre: "+type;
+        return b;
+    }
+}

@@ -1,0 +1,15 @@
+public class Book extends Product{
+    public String num1;
+    public String writer;
+    public Book(int a,String b,int c,String d,String e){
+        super(a,b,c);
+        num1=d;
+        writer=e;
+
+    }
+    public String printDetail(){
+        String a = super.getIdTitlePrice();
+        String b = a + "ISBN: "num1" Publisher: "+writer;
+        return b;
+    }
+}

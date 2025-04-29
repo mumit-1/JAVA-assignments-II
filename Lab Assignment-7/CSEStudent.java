@@ -1,0 +1,29 @@
+public class CSEStudent extends Student{
+    public static int count;
+    public static String[] arr = {"CSE110","CSE111","CSE220","CSE221"};
+    public static void details(){
+        System.out.println("Total CSE Students: "+count+"\nAvailable Lab Based Courses: \nCSE110 CSE111 CSE220 CSE221 ");
+    }
+    public int countXX;
+    public String[] arr2 = new String[4];
+    public CSEStudent(String a,int b){
+        super(a,b);
+        count++;
+    }
+    public void addLabBasedCourse(String a){
+        boolean chk = false;
+        for(int i=0;i<4;i++){
+            if(arr[i].equals(a)) chk=true;
+        }
+        if(chk==true){
+            arr2[countXX]=a;
+            courses += arr2[countXX]+" ";
+            countXX++;
+            
+        }
+        else{
+            System.out.println("It is not a lab based course!");
+        }
+    }
+
+}
