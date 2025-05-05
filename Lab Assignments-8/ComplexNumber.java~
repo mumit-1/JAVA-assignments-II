@@ -1,0 +1,14 @@
+public class ComplexNumber extends RealNumber{
+    public double imagine;
+    public ComplexNumber(){
+        super(1.0);
+        imagine=1.0;
+    }
+    public ComplexNumber(String a,String b){
+        super(a);
+        imagine=b;
+    }
+    public String toString(){
+        return super.toString()+"ImaginaryPart: "+imagine;
+    }
+}

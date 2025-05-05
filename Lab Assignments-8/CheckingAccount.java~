@@ -1,0 +1,11 @@
+public class CheckingAccount extends Account{
+    public static int count;
+    public CheckingAccount(){
+        count++;
+    }
+    public CheckingAccount(double a){
+        count++;
+        super(a);
+    }
+
+}
