@@ -1,0 +1,18 @@
+public class KKFlavouredTea extends KKTea{
+        public int bags;
+    public int w;
+    public KKFlavouredTea(String x,int a,int b){
+        super(x,a);
+        bags=b;
+        w=b*2;
+    }
+    public void productDetail(){
+        System.out.println(super.productDetail()+"\nWeight: "+w+", Tea Bags: "+bags);
+            
+    }
+
+    public static void updateSoldStatusRegular(){
+        total++;
+        flavour++;
+    }
+}

@@ -1,0 +1,41 @@
+public class CinemexTicket extends MovieTicket{
+    public static int totalTicket;
+    public String genre;
+    public String status="Not paid";
+    public int need;
+    public int getTotalTickets(){
+        return totalTicket;
+    }
+    public CinemexTicket(String a,String b,String c,String d,String e){
+        totalTicket++;
+        genre=c;
+        for(int i=0;i<seatTypes.length;i++){
+            if(e.equals(seatTypes[i])){
+                super(a,d,b,seatPrices[i]);
+                need=i;
+            } 
+        }
+    }
+    public CinemexTicket(String a,String b,String c,String d){
+        this(a,b,c,d,"Regular");
+    }
+    public calculateTicketPrice(){
+        int num1 = Integer.parseInt(showtime.split(":"));
+        if(num1<11 & num1>6){
+            super.setPrice(super.getPrice()+(super.getPrice()*(nightShowCharge/100.00)));
+        }
+        System.out.println("Ticket price is calculated successfully.");
+    }
+    public String toString(){
+        return super.toString()+"Genre: "+genre+"\nSeat Type: "+super.seatTypes[need]+"\nPrice(tk): "+super.getPrice()+"\nStatus: "+status;
+        }
+    public String confirmPayment(){
+        if(status.equals("Not paid")){
+            status="Paid"
+            return "Payment Successful.";
+        }
+        else{
+             return "Ticket price is already paid!";
+        }
+    }
+}
