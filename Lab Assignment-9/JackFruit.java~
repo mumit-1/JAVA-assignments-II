@@ -1,0 +1,8 @@
+public class JackFruit extends Fruit{
+        public Jackfruit(){
+        super(true,"Jackfruit");
+    }
+    public String ttoString(){
+        return "Jackfruits are bad for you";
+    }
+}

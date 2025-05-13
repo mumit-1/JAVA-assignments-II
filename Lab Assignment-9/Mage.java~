@@ -1,0 +1,12 @@
+public class Mage extends Character{
+     public Mage(String a,int b){
+    super(a,b);
+ }
+     public void specialMove() {
+    System.out.println(name+" casts a powerful fireball!");
+  }
+  public boolean equals(Mage a){
+    if(a==level) return true;
+    else false;
+  }
+}

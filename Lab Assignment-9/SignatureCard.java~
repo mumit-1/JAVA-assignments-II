@@ -1,0 +1,10 @@
+public class SignatureCard extends CreditCard{
+      public SignatureCard(String a,String b){
+        super(a,b,200);
+    }
+    public void spendCash(m){
+        System.out.println("Previous Reward Points: "+rewardPoints);
+        rewardPoints+=((m/100)*2);
+        System.out.println("Reward points after spending "+m+" taka: "+rewardPoints);
+    }
+}

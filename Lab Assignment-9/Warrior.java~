@@ -1,0 +1,12 @@
+public class Warrior extends Character{
+ public Warrior(String a,int b){
+    super(a,b);
+ }
+     public void specialMove() {
+    System.out.println(name+" performs a heavy sword slash!");
+  }
+    public boolean equals(Warrior a){
+    if(a==level) return true;
+    else false;
+  }
+}
