@@ -1,0 +1,211 @@
+//Task-1
+public class Pokemon{
+  public String name;
+  public Pokemon(String a){
+    name=a;
+  }
+  public void attack(){
+    System.out.println("Pikachu attacks with a basic move!");
+  }
+  public void attack(String a){
+   System.out.println("Pikachu uses "+a+"!");
+  }
+   public void attack(String a,int b){
+     System.out.println("Pokemon uses "+a+" with power "+b+"!");
+  }
+} 
+1.b ans : Method loading
+
+
+//Task-2
+public class Mango extends Fruit{
+    public Mango(){
+        super(true,"Mango");
+    }
+    public String toString(){
+        return "Mangos are bad for you";
+    }
+}
+public class Jackfruit extends Fruit{
+    public Jackfruit(){
+        super(false,"Jackfruit");
+    }
+    public String toString(){
+        return "Jackfruits are good for you";
+    }
+}
+
+
+
+//task-3
+public class CSEStudent extends Student{
+    public String msg="I want to transfer to CSE";
+    public String shout(){
+        return msg;
+    }
+}
+public class CSE111Student extends Student{
+    public String msg="I love Java Programming";
+    public String shout(){
+        return msg;
+    }
+}
+
+
+//Task-04
+
+public class PlatinumCard extends CreditCard{
+    public PlatinumCard(String a,String b){
+        super(a,b,100);
+    }
+    public void spendCash(int m){
+        System.out.println("Previous Reward Points: "+rewardPoints);
+        rewardPoints+=(m/50);
+        System.out.println("Reward points after spending "+m+" taka: "+rewardPoints);
+    }
+}
+public class SignatureCard extends CreditCard{
+      public SignatureCard(String a,String b){
+        super(a,b,200);
+    }
+    public void spendCash(int m){
+        System.out.println("Previous Reward Points: "+rewardPoints);
+        rewardPoints+=((m/50)*2);
+        System.out.println("Reward points after spending "+m+" taka: "+rewardPoints);
+    }
+    public void cardDetails(){
+        super.cardDetails();
+        System.out.println("Possible Number of Companions for Lounge: 5");
+    }
+}
+
+//Task-5
+public class Warrior extends Character{
+ public Warrior(String a,int b){
+    super(a,b);
+ }
+     public void specialMove() {
+    System.out.println(name+" performs a heavy sword slash!");
+  }
+
+}
+public class Mage extends Character{
+     public Mage(String a,int b){
+    super(a,b);
+ }
+     public void specialMove() {
+    System.out.println(name+" casts a powerful fireball!");
+  }
+
+}
+public class Paladin extends Warrior{
+    public Paladin(String a,int b){
+        super(a,b);
+    }
+      public void specialMove() {
+    System.out.println(name+" unleashes a holy strike!");
+  }
+
+}
+
+
+
+
+//Task-6
+public class Garage{
+ public Car[] cars= new Car[0];
+ public Bike[] bikes= new Bike[0];
+ public int carLimit;
+ public int bikeLimit;
+ public int count;
+ public int count2;
+ public Garage(int a,int b){
+    cars = new Car[a];
+    bikes = new Bike[b];
+    carLimit=a;
+    bikeLimit=b;
+    System.out.println("Welcome to the Garage!\nCar Capacity: "+a+"\nBike Capacity: "+b);
+ }
+public void addVehicle(Vehicle m){
+    if(m instanceof Car){
+        Car a = (Car)m;
+ if(count<(carLimit)) {
+    for(int i=0;i<cars.length;i++){
+        if(cars[i]==null) {
+            cars[i]=a;
+            count++;
+            System.out.println("A "+a.getBrand()+" CAR has been added to the Garage");
+            break;
+        }
+    }
+ }
+ else{
+    System.out.println("Can't add more Cars! Capacity: "+carLimit);
+ }
+    }
+    else{
+               Bike a = (Bike)m;
+ if(count2<(bikeLimit)) {
+    for(int i=0;i<bikes.length;i++){
+        if(bikes[i]==null) {
+            bikes[i]=a;
+            count2++;
+            System.out.println("A "+a.getBrand()+" BIKE has been added to the Garage");
+            break;    
+        }
+    }
+ }
+ else{
+    System.out.println("Can't add more bikes! Capacity: "+bikeLimit);
+ }
+    }
+}
+}
+
+public class Car extends Vehicle {
+    public String model;
+    public int doors;
+    public boolean ai;
+
+    public Car(String a,String b,int c,int d,int e,boolean f){
+        super(a,c);
+        setWheels(e);
+        model=b;
+        doors=d;
+        ai=f;
+    }
+    public String toString(){
+        String a = "Car " + super.toString() + ", Model: "+model+", Doors: "+doors+", AI: "+ai;
+        return a;
+    }
+    
+    public void startAutoPilot(){
+        if(ai==true){
+            System.out.println(super.getBrand()+" "+model+" AutoPilot Started");
+        }
+        else{
+            System.out.println(super.getBrand()+":"+model+" has NO AutoPilot");
+        }
+    }
+}
+
+public class Bike extends Vehicle {
+    public String model;
+    public boolean sideCar;
+
+    public Bike(String a,String b,int c,int d,boolean f){
+        super(a,c);
+        setWheels(d);
+        model=b;
+        sideCar=f;
+    }
+    public String toString(){
+      String a = "bike " + super.toString() + ", Model: "+model+", Sidecar: "+sideCar;
+        return a;
+    }
+    public void doAWheelie(){
+        if(sideCar==true) System.out.println("Wheelie Failed. "+super.getBrand()+":"+model+" has SideCar");
+        else System.out.println(super.getBrand()+":"+model+" is doing Wheelie!!");
+    }
+}
+
