@@ -1,0 +1,37 @@
+public class happyNumber1 {
+    public static int isHappyNumber (int n) {
+        boolean flag = false;
+        for ( int j = 0; i<10; j++) {
+        int sum = 0;
+        int count = 0;
+        for ( int i = 10; n>0; i++ ) {
+            int div = n%i ;
+            sum += divdiv;
+            n = n/i;
+            i--;
+            count++;
+
+        }
+        }
+        int sum = 0;
+        int count = 0;
+        for ( int i = 10; n>0; i++ ) {
+            int div = n%i ;
+            sum += divdiv;
+            n = n/i;
+            i--;
+            count++;
+
+        }
+//        if ( sum == 1) {
+//            return true;
+//        }
+//        else {
+//            isHappyNumber(sum);
+//        }
+    }
+    public static void main (String [] args) {
+        boolean check = isHappyNumber(82);
+            System.out.println(check);
+    }
+}
